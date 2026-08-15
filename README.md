@@ -51,17 +51,25 @@ ID 用 DSH 表层 seq（`compactRegion` 的原生单位），不是 OpenCode 的
 
 ## Install
 
+`github:aerince/dsh-active-context-pruning` 这条 spec 对所有人一样。前面的命令不是。
+
+官方安装器是 `dsh plugin --profile <profile> add`，在该 profile 目录里转发给 pnpm。前提：`dsh` CLI、`pnpm`、`git`。本包无 `prepare`，不用改 `allowBuilds`。
+
+Desktop 默认 profile 是 `web`：
+
 ```sh
 dsh plugin --profile web add github:aerince/dsh-active-context-pruning
 ```
 
-固定到某个提交：
+其他 profile 把 `web` 换成你的名字。没有 CLI 时，在 Desktop 插件面板粘贴同一条 `github:aerince/dsh-active-context-pruning`。
+
+钉到 v0.1.0：
 
 ```sh
-dsh plugin --profile web add github:aerince/dsh-active-context-pruning#COMMIT_SHA
+dsh plugin --profile web add github:aerince/dsh-active-context-pruning#5ecc5eb
 ```
 
-然后重启 DSH。无 `prepare` 脚本。需要已加载的 `tools`、`compaction`、`tokenMeter`（Desktop 默认都有）。
+`dsh` 写的是 `$DSH_HOME/profiles/<profile>`。Desktop 和独立 CLI 的 home 可能不是同一处；装进看不见的 profile 等于没装。然后重启 DSH。需要已加载的 `tools`、`compaction`、`tokenMeter`（Desktop 默认都有）。
 
 ## Verify
 
