@@ -1,7 +1,7 @@
 {
   "name": "dsh-active-context-pruning",
   "version": "0.1.0",
-  "description": "Model-driven Active Context Pruning for DeepSeek Harness. Not Agent Client Protocol.",
+  "description": "Model-authored context pruning for DeepSeek Harness through the official compaction API.",
   "type": "module",
   "main": "index.js",
   "exports": {
